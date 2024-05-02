@@ -31,10 +31,11 @@ export const showError = (error) => {
 	newElement.style.padding = "40px"
 	newElement.style.backgroundColor = "rgb(255,255,255)"
 	newElement.style.color = "red"
+	newElement.style.border = "1px solid red"
 	newElement.style.borderRadius = "10px"
 	newElement.style.display = "flex"
 	newElement.style.flexDirection = "column"
-	newElement.textContent = error
+	newElement.innerHTML = `<span><strong>ALERT!</strong> ${error}</span>`
 	newElement.style.zIndex = '1000'
 	newElement.style.fontFamily = 'sans-serif'
 	document.body.appendChild(newElement)

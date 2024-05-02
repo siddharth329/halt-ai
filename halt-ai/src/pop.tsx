@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { MemoryRouter, Routes, Route, useNavigate } from "react-router-dom"
-// import { useStorage } from "@plasmohq/storage/hook"
 
 import EmployeeId from "~components/EmployeeId"
 import EditEmployeeId from "~components/EditEmployee"
@@ -18,7 +17,6 @@ function Main() {
 	}, [])
 
 	const useEffectFunction = async () => {
-		
 		const machineIdFromStorage = await getItemFromStorage({key: 'machineId'});
 		setMachineId(machineIdFromStorage)
 	}
@@ -29,7 +27,7 @@ function Main() {
 		navigate('/')
 	}
 
-	console.log(machineId)
+	console.log(machineId === undefined)
 	return (
 		<div className="plasmo-flex plasmo-items-center plasmo-justify-center">
 		<div className="plasmo-w-[400px] plasmo-h-[500px] plasmo-flex plasmo-justify-center plasmo-items-center">

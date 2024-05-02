@@ -22,14 +22,14 @@ const activateGemini = () => {
 	const textarea = document.querySelector(
 		'div[data-placeholder="Enter a prompt here"]'
 	)
+	// const textarea = document.querySelector("#prompt-textarea")
 
 	if (textarea) {
 		textarea.addEventListener("keydown", async (event) => {
 			event.stopPropagation()
+
 			if (event.keyCode === 13 && !event.shiftKey) {
 				event.preventDefault()
-
-				console.log("Inside the execution block")
 
 				const removeLoading = showLoading()
 				const handler = new APIHandler()

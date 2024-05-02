@@ -1,8 +1,7 @@
-import type { PlasmoCSConfig } from "plasmo"
 import activateChatGPT from "~scripts/activateChatGPT"
 import activateGemini from '~scripts/activateGemini'
 
-export const config: PlasmoCSConfig = {
+export const config = {
   matches: ["https://chat.openai.com/*", 'https://gemini.google.com/*']
 }
 

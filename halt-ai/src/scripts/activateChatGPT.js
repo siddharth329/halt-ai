@@ -27,6 +27,7 @@ const activateChatGPT = () => {
 	if (textarea) {
 		textarea.addEventListener("keydown", async (event) => {
 			event.stopPropagation()
+
 			if (event.keyCode === 13 && !event.shiftKey) {
 				event.preventDefault()
 
@@ -39,6 +40,13 @@ const activateChatGPT = () => {
 				removeLoading()
 
 				if (data.source === 0 && data.blocked === false) {
+					const textarea1 = document.querySelector(
+						"textarea[tabindex='0']"
+					)
+					textarea1.value = data.content
+					textarea1.dispatchEvent(
+						new Event("input", { bubbles: true })
+					)
 					buttonElement.click()
 				} else if (data.blocked === true) {
 					const removeError = showError(data.error)
